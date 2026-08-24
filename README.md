@@ -25,7 +25,7 @@ Welcome to my personal QA Portfolio repository. This site showcases my backgroun
 
 ## 🚀 Live Demo
 
-- **Hosted on Vercel:** [farhandeshmukh17/farhan-qa-portfolio]
+- **Hosted on Vercel:** [https://farhandeshmukh-qa-portfolio-website.vercel.app]
 
 ---
 
