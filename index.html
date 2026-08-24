@@ -294,11 +294,11 @@
     <div class="blur-glow bg-indigo-600 w-96 h-96 top-[30rem] right-10 animate-float-reverse"></div>
     <div class="blur-glow bg-cyan-600 w-80 h-80 bottom-32 left-1/4 animate-float"></div>
 
-    <!-- NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-darkbg/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center gap-2">
-            <a href="#" class="text-base sm:text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-2.5 sm:gap-3 group shrink-0">
-                <img src="./images/logo.png" alt="Logo" class="w-8 h-8 md:w-9 md:h-9 rounded-lg object-contain border border-sky-500/40 bg-cardbg p-1 transition-transform group-hover:rotate-12 duration-300 block shrink-0">
+    <!-- NAVIGATION (Fixed to ensure visibility on mobile everywhere) -->
+    <header id="mainHeader" class="fixed top-0 left-0 right-0 w-full z-50 bg-darkbg/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center gap-3">
+            <a href="#" class="text-sm sm:text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-2 sm:gap-3 group shrink-0">
+                <img src="images/logo.png" alt="Logo" class="w-8 h-8 md:w-9 md:h-9 rounded-lg object-contain border border-sky-500/40 bg-cardbg p-1 transition-transform group-hover:rotate-12 duration-300 block shrink-0">
                 <span class="group-hover:text-sky-300 transition-colors whitespace-nowrap">
                     <span class="text-sky-400">&lt;</span>
                     <span>Farhan Deshmukh</span>
@@ -321,7 +321,7 @@
                     Hire Me
                 </a>
 
-                <!-- Mobile Button -->
+                <!-- Mobile Hamburger Button -->
                 <button id="mobileMenuBtn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-gray-300 hover:text-sky-400 focus:outline-none p-2 rounded-lg bg-cardbg border border-gray-800 transition-all active:scale-95 z-50">
                     <i id="menuIcon" class="fa-solid fa-bars text-lg w-5 h-5 flex items-center justify-center transition-transform duration-300"></i>
                 </button>
@@ -335,7 +335,7 @@
     <div id="mobileDrawer" class="fixed top-0 right-0 w-72 h-full bg-cardbg border-l border-gray-800 z-40 transform translate-x-full transition-transform duration-300 ease-in-out p-6 pt-20 flex flex-col justify-between md:hidden shadow-2xl">
         <div>
             <div class="pb-4 border-b border-gray-800 flex items-center gap-3">
-                <img src="./images/logo.png" alt="Logo" class="w-8 h-8 rounded-lg border border-sky-500/40 bg-darkbg p-1 shrink-0">
+                <img src="images/logo.png" alt="Logo" class="w-8 h-8 rounded-lg border border-sky-500/40 bg-darkbg p-1 shrink-0">
                 <div>
                     <span class="text-xs uppercase tracking-widest text-sky-400 font-bold block">&lt;Farhan Deshmukh /&gt;</span>
                     <span class="text-[11px] text-gray-400">QA Engineer</span>
@@ -374,11 +374,11 @@
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <main class="relative z-10 max-w-6xl mx-auto px-6">
+    <!-- MAIN CONTENT (Offset for fixed header) -->
+    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-16 md:pt-20">
 
         <!-- HERO -->
-        <section id="about" class="py-20 md:py-28 flex flex-col md:flex-row items-center gap-12 border-b border-gray-800">
+        <section id="about" class="py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 border-b border-gray-800">
             <div class="flex-1 space-y-6" data-aos="fade-right" data-aos-duration="1000">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/60 border border-sky-800/50 text-sky-400 text-xs font-medium shadow-inner animate-pulse-slow">
                     <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
@@ -731,7 +731,7 @@
         });
 
         // Header Shadow on Scroll
-        const header = document.querySelector("header");
+        const header = document.getElementById("mainHeader");
         window.addEventListener("scroll", () => {
             if (window.scrollY > 30) {
                 header.classList.add("shadow-lg", "shadow-sky-950/20");
