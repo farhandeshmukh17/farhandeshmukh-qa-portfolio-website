@@ -215,7 +215,7 @@
         #backToTop {
             position: fixed;
             right: 20px;
-            bottom: 85px; /* Above mobile bottom bar */
+            bottom: 25px;
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -230,12 +230,6 @@
             transition: all 0.3s ease;
             z-index: 40;
             box-shadow: 0 0 20px rgba(2,132,199,0.4);
-        }
-
-        @media (min-width: 768px) {
-            #backToTop {
-                bottom: 25px;
-            }
         }
 
         #backToTop.show {
@@ -277,7 +271,7 @@
     </style>
 </head>
 
-<body class="bg-darkbg text-gray-200 font-sans antialiased relative min-h-screen selection:bg-sky-500 selection:text-white overflow-x-hidden pb-16 md:pb-0">
+<body class="bg-darkbg text-gray-200 font-sans antialiased relative min-h-screen selection:bg-sky-500 selection:text-white overflow-x-hidden">
 
     <!-- SCROLL PROGRESS -->
     <div id="scrollProgress"></div>
@@ -302,7 +296,7 @@
 
     <!-- TOP HEADER -->
     <header id="mainHeader" class="fixed top-0 left-0 right-0 w-full z-50 bg-darkbg/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center gap-2">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center gap-2 relative">
             <a href="#" class="text-base md:text-xl font-bold tracking-tight text-white flex items-center gap-2.5 group shrink-0">
                 <img src="images/logo.png" alt="Logo" class="w-8 h-8 md:w-9 md:h-9 rounded-lg object-contain border border-sky-500/40 bg-cardbg p-1 transition-transform group-hover:rotate-12 duration-300 block shrink-0">
                 <span class="group-hover:text-sky-300 transition-colors whitespace-nowrap text-sm sm:text-base md:text-xl">
@@ -321,39 +315,40 @@
                 <a href="#contact" class="hover:text-sky-400 transition-all duration-200 hover:-translate-y-0.5">Contact</a>
             </nav>
 
-            <div class="flex items-center gap-2">
+            <!-- Action Area (Hire Me + Mobile Menu Toggle) -->
+            <div class="relative flex items-center gap-2">
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=farhandeshmukh05@gmail.com&su=QA%20Job%20Opportunity%20-%20Farhan%20Deshmukh" target="_blank" rel="noopener noreferrer" class="shine-btn inline-flex items-center gap-1.5 bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all duration-300 shadow-lg shadow-sky-600/20 hover:shadow-sky-600/40 hover:scale-105 active:scale-95">
                     <i class="fa-regular fa-envelope"></i>
                     <span>Hire Me</span>
                 </a>
+
+                <!-- Hamburger Button (Mobile Only) -->
+                <button id="mobileMenuToggle" aria-label="Toggle navigation menu" class="md:hidden w-8 h-8 rounded-lg bg-cardbg border border-gray-700 flex items-center justify-center text-sky-400 hover:text-white hover:border-sky-500 transition-all">
+                    <i id="mobileMenuIcon" class="fa-solid fa-bars text-sm"></i>
+                </button>
+
+                <!-- MOBILE DROPDOWN MENU (Anchored directly below Hire Me on the right side) -->
+                <nav id="mobileMenu" class="hidden md:hidden absolute right-0 top-12 w-48 bg-cardbg/95 backdrop-blur-xl border border-gray-800 rounded-2xl shadow-2xl p-2 z-50 animate-fadeIn">
+                    <a href="#about" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 text-xs font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-xl transition-all">
+                        <i class="fa-solid fa-user text-sky-400 w-4 text-center"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#skills" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 text-xs font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-xl transition-all">
+                        <i class="fa-solid fa-list-check text-sky-400 w-4 text-center"></i>
+                        <span>Skills</span>
+                    </a>
+                    <a href="#projects" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 text-xs font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-xl transition-all">
+                        <i class="fa-solid fa-folder-open text-sky-400 w-4 text-center"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#contact" class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 text-xs font-medium text-gray-300 hover:text-white hover:bg-gray-800/80 rounded-xl transition-all">
+                        <i class="fa-solid fa-paper-plane text-sky-400 w-4 text-center"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
             </div>
         </div>
     </header>
-
-    <!-- MOBILE BOTTOM NAVIGATION MENU BAR (Visible on Mobile Only) -->
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-cardbg/95 backdrop-blur-lg border-t border-gray-800 shadow-[0_-10px_25px_rgba(0,0,0,0.5)] px-3 py-2">
-        <div class="flex items-center justify-around max-w-md mx-auto">
-            <a href="#about" class="flex flex-col items-center gap-1 text-gray-400 hover:text-sky-400 focus:text-sky-400 active:scale-95 transition-all text-[11px] font-medium py-1 px-2.5 rounded-lg">
-                <i class="fa-solid fa-user text-base text-sky-400"></i>
-                <span>About</span>
-            </a>
-
-            <a href="#skills" class="flex flex-col items-center gap-1 text-gray-400 hover:text-sky-400 focus:text-sky-400 active:scale-95 transition-all text-[11px] font-medium py-1 px-2.5 rounded-lg">
-                <i class="fa-solid fa-list-check text-base text-sky-400"></i>
-                <span>Skills</span>
-            </a>
-
-            <a href="#projects" class="flex flex-col items-center gap-1 text-gray-400 hover:text-sky-400 focus:text-sky-400 active:scale-95 transition-all text-[11px] font-medium py-1 px-2.5 rounded-lg">
-                <i class="fa-solid fa-folder-open text-base text-sky-400"></i>
-                <span>Projects</span>
-            </a>
-
-            <a href="#contact" class="flex flex-col items-center gap-1 text-gray-400 hover:text-sky-400 focus:text-sky-400 active:scale-95 transition-all text-[11px] font-medium py-1 px-2.5 rounded-lg">
-                <i class="fa-solid fa-paper-plane text-base text-sky-400"></i>
-                <span>Contact</span>
-            </a>
-        </div>
-    </nav>
 
     <!-- MAIN CONTENT -->
     <main class="relative z-10 max-w-6xl mx-auto px-6 pt-20 md:pt-24">
@@ -560,7 +555,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-gray-800 py-8 bg-darkbg mb-14 md:mb-0">
+    <footer class="border-t border-gray-800 py-8 bg-darkbg">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
             <p>© 2026 Farhan Deshmukh. All rights reserved.</p>
 
@@ -593,6 +588,39 @@
             offset: 80,
             easing: 'ease-out-cubic'
         });
+
+        // Mobile Menu Dropdown Toggle
+        const mobileToggle = document.getElementById("mobileMenuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileIcon = document.getElementById("mobileMenuIcon");
+        const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.toggle("hidden");
+                mobileIcon.classList.toggle("fa-bars", isHidden);
+                mobileIcon.classList.toggle("fa-xmark", !isHidden);
+            });
+
+            // Close dropdown when clicking any link
+            mobileLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.add("hidden");
+                    mobileIcon.classList.add("fa-bars");
+                    mobileIcon.classList.remove("fa-xmark");
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener("click", (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    mobileMenu.classList.add("hidden");
+                    mobileIcon.classList.add("fa-bars");
+                    mobileIcon.classList.remove("fa-xmark");
+                }
+            });
+        }
 
         // Typing Effect
         const phrases = ["into Manual Testing", "into Automation Testing"];
