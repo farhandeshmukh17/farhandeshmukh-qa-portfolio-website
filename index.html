@@ -296,12 +296,13 @@
 
     <!-- NAVIGATION -->
     <header class="sticky top-0 z-50 bg-darkbg/80 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-3 group">
-                <img src="images/logo.png" alt="Logo" class="w-8 h-8 md:w-9 md:h-9 rounded-lg object-cover border border-sky-500/40 bg-cardbg p-1 transition-transform group-hover:rotate-12 duration-300" onerror="this.style.display='none'">
-                <span class="group-hover:text-sky-300 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center gap-2">
+            <a href="#" class="text-base sm:text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                <img src="./images/logo.png" alt="Logo" class="w-8 h-8 md:w-9 md:h-9 rounded-lg object-contain border border-sky-500/40 bg-cardbg p-1 transition-transform group-hover:rotate-12 duration-300 block shrink-0">
+                <span class="group-hover:text-sky-300 transition-colors whitespace-nowrap">
                     <span class="text-sky-400">&lt;</span>
-                    Farhan Deshmukh | QA
+                    <span>Farhan Deshmukh</span>
+                    <span class="hidden sm:inline text-gray-400 font-normal"> | QA</span>
                     <span class="text-sky-400">&gt;</span>
                 </span>
             </a>
@@ -321,7 +322,7 @@
                 </a>
 
                 <!-- Mobile Button -->
-                <button id="mobileMenuBtn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-gray-300 hover:text-sky-400 focus:outline-none p-2.5 rounded-lg bg-cardbg border border-gray-800 transition-all active:scale-95 z-50">
+                <button id="mobileMenuBtn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-gray-300 hover:text-sky-400 focus:outline-none p-2 rounded-lg bg-cardbg border border-gray-800 transition-all active:scale-95 z-50">
                     <i id="menuIcon" class="fa-solid fa-bars text-lg w-5 h-5 flex items-center justify-center transition-transform duration-300"></i>
                 </button>
             </div>
@@ -331,10 +332,14 @@
     <!-- MOBILE DRAWER -->
     <div id="mobileBackdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
 
-    <div id="mobileDrawer" class="fixed top-0 right-0 w-72 h-full bg-cardbg border-l border-gray-800 z-40 transform translate-x-full transition-transform duration-300 ease-in-out p-6 pt-24 flex flex-col justify-between md:hidden shadow-2xl">
+    <div id="mobileDrawer" class="fixed top-0 right-0 w-72 h-full bg-cardbg border-l border-gray-800 z-40 transform translate-x-full transition-transform duration-300 ease-in-out p-6 pt-20 flex flex-col justify-between md:hidden shadow-2xl">
         <div>
-            <div class="pb-4 border-b border-gray-800">
-                <span class="text-xs uppercase tracking-widest text-sky-400 font-bold">&lt;Quick Menu /&gt;</span>
+            <div class="pb-4 border-b border-gray-800 flex items-center gap-3">
+                <img src="./images/logo.png" alt="Logo" class="w-8 h-8 rounded-lg border border-sky-500/40 bg-darkbg p-1 shrink-0">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-sky-400 font-bold block">&lt;Farhan Deshmukh /&gt;</span>
+                    <span class="text-[11px] text-gray-400">QA Engineer</span>
+                </div>
             </div>
 
             <nav class="flex flex-col space-y-5 pt-6 text-base font-medium">
