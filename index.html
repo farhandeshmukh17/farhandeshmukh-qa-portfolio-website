@@ -294,9 +294,9 @@
     <div class="blur-glow bg-indigo-600 w-96 h-96 top-[30rem] right-10 animate-float-reverse"></div>
     <div class="blur-glow bg-cyan-600 w-80 h-80 bottom-32 left-1/4 animate-float"></div>
 
-    <!-- NAVIGATION (Fixed to ensure visibility on mobile everywhere) -->
+    <!-- NAVIGATION HEADER -->
     <header id="mainHeader" class="fixed top-0 left-0 right-0 w-full z-50 bg-darkbg/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center gap-3">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center gap-2">
             <a href="#" class="text-sm sm:text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-2 sm:gap-3 group shrink-0">
                 <img src="images/logo.png" alt="Logo" class="w-8 h-8 md:w-9 md:h-9 rounded-lg object-contain border border-sky-500/40 bg-cardbg p-1 transition-transform group-hover:rotate-12 duration-300 block shrink-0">
                 <span class="group-hover:text-sky-300 transition-colors whitespace-nowrap">
@@ -322,43 +322,49 @@
                 </a>
 
                 <!-- Mobile Hamburger Button -->
-                <button id="mobileMenuBtn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-gray-300 hover:text-sky-400 focus:outline-none p-2 rounded-lg bg-cardbg border border-gray-800 transition-all active:scale-95 z-50">
+                <button id="mobileMenuBtn" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-gray-300 hover:text-sky-400 focus:outline-none p-2.5 rounded-lg bg-cardbg border border-gray-800 transition-all active:scale-95 relative z-50">
                     <i id="menuIcon" class="fa-solid fa-bars text-lg w-5 h-5 flex items-center justify-center transition-transform duration-300"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE DRAWER -->
-    <div id="mobileBackdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+    <!-- MOBILE BACKDROP -->
+    <div id="mobileBackdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
 
-    <div id="mobileDrawer" class="fixed top-0 right-0 w-72 h-full bg-cardbg border-l border-gray-800 z-40 transform translate-x-full transition-transform duration-300 ease-in-out p-6 pt-20 flex flex-col justify-between md:hidden shadow-2xl">
+    <!-- MOBILE DRAWER -->
+    <aside id="mobileDrawer" class="fixed top-0 right-0 w-[280px] max-w-[85vw] h-full bg-cardbg border-l border-gray-800 z-[70] transform translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between md:hidden shadow-2xl overflow-y-auto">
         <div>
-            <div class="pb-4 border-b border-gray-800 flex items-center gap-3">
-                <img src="images/logo.png" alt="Logo" class="w-8 h-8 rounded-lg border border-sky-500/40 bg-darkbg p-1 shrink-0">
-                <div>
-                    <span class="text-xs uppercase tracking-widest text-sky-400 font-bold block">&lt;Farhan Deshmukh /&gt;</span>
-                    <span class="text-[11px] text-gray-400">QA Engineer</span>
+            <div class="pb-5 border-b border-gray-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Logo" class="w-8 h-8 rounded-lg border border-sky-500/40 bg-darkbg p-1 shrink-0">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-sky-400 font-bold block">&lt;Farhan /&gt;</span>
+                        <span class="text-[11px] text-gray-400">QA Engineer</span>
+                    </div>
                 </div>
+                <button id="closeDrawerBtn" aria-label="Close menu" class="text-gray-400 hover:text-white p-2 rounded-lg bg-darkbg border border-gray-800 transition-colors">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
             </div>
 
-            <nav class="flex flex-col space-y-5 pt-6 text-base font-medium">
-                <a href="#about" class="mobile-link text-gray-300 hover:text-sky-400 transition-all duration-300 flex items-center gap-3 py-1 hover:translate-x-2">
+            <nav class="flex flex-col space-y-4 pt-6 text-base font-medium">
+                <a href="#about" class="mobile-link text-gray-300 hover:text-sky-400 hover:bg-darkbg/60 px-3 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-3">
                     <i class="fa-solid fa-user text-sky-400 text-sm w-5"></i> About
                 </a>
-                <a href="#skills" class="mobile-link text-gray-300 hover:text-sky-400 transition-all duration-300 flex items-center gap-3 py-1 hover:translate-x-2">
+                <a href="#skills" class="mobile-link text-gray-300 hover:text-sky-400 hover:bg-darkbg/60 px-3 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-3">
                     <i class="fa-solid fa-list-check text-sky-400 text-sm w-5"></i> Skills
                 </a>
-                <a href="#projects" class="mobile-link text-gray-300 hover:text-sky-400 transition-all duration-300 flex items-center gap-3 py-1 hover:translate-x-2">
+                <a href="#projects" class="mobile-link text-gray-300 hover:text-sky-400 hover:bg-darkbg/60 px-3 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-3">
                     <i class="fa-solid fa-folder-open text-sky-400 text-sm w-5"></i> Projects
                 </a>
-                <a href="#contact" class="mobile-link text-gray-300 hover:text-sky-400 transition-all duration-300 flex items-center gap-3 py-1 hover:translate-x-2">
+                <a href="#contact" class="mobile-link text-gray-300 hover:text-sky-400 hover:bg-darkbg/60 px-3 py-2.5 rounded-lg transition-all duration-200 flex items-center gap-3">
                     <i class="fa-solid fa-envelope text-sky-400 text-sm w-5"></i> Contact
                 </a>
             </nav>
         </div>
 
-        <div class="pt-6 border-t border-gray-800 space-y-4">
+        <div class="pt-6 border-t border-gray-800 space-y-4 mt-6">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=farhandeshmukh05@gmail.com&su=QA%20Job%20Opportunity%20-%20Farhan%20Deshmukh" target="_blank" rel="noopener noreferrer" class="shine-btn w-full inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 text-white text-sm font-semibold px-4 py-3 rounded-lg transition-all shadow-md shadow-sky-600/20">
                 <i class="fa-regular fa-envelope"></i> Hire Me
             </a>
@@ -372,13 +378,13 @@
                 </a>
             </div>
         </div>
-    </div>
+    </aside>
 
-    <!-- MAIN CONTENT (Offset for fixed header) -->
-    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-16 md:pt-20">
+    <!-- MAIN CONTENT -->
+    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-20 md:pt-24">
 
-        <!-- HERO -->
-        <section id="about" class="py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 border-b border-gray-800">
+        <!-- HERO / ABOUT -->
+        <section id="about" class="scroll-mt-24 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 border-b border-gray-800">
             <div class="flex-1 space-y-6" data-aos="fade-right" data-aos-duration="1000">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/60 border border-sky-800/50 text-sky-400 text-xs font-medium shadow-inner animate-pulse-slow">
                     <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
@@ -441,7 +447,7 @@
         </section>
 
         <!-- SKILLS -->
-        <section id="skills" class="py-20 border-b border-gray-800">
+        <section id="skills" class="scroll-mt-24 py-20 border-b border-gray-800">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
                 <h2 class="section-heading text-3xl font-bold text-white tracking-tight">Core Competencies</h2>
                 <p class="text-gray-400 mt-2">Specialized exclusively in Manual Testing and Automation Testing processes.</p>
@@ -487,7 +493,7 @@
         </section>
 
         <!-- PROJECTS -->
-        <section id="projects" class="py-20 border-b border-gray-800">
+        <section id="projects" class="scroll-mt-24 py-20 border-b border-gray-800">
             <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
                 <p class="text-xs font-bold uppercase tracking-widest text-sky-400 mb-2">FEATURED WORK</p>
                 <h2 class="section-heading text-3xl font-bold text-white tracking-tight">Projects & <span class="text-sky-400">Experience</span></h2>
@@ -546,7 +552,7 @@
         </section>
 
         <!-- CONTACT -->
-        <section id="contact" class="py-20" data-aos="fade-up">
+        <section id="contact" class="scroll-mt-24 py-20" data-aos="fade-up">
             <div class="max-w-2xl mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="section-heading text-3xl font-bold text-white tracking-tight">Get In Touch</h2>
@@ -613,41 +619,53 @@
             easing: 'ease-out-cubic'
         });
 
-        // Mobile Menu
+        // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeDrawerBtn = document.getElementById('closeDrawerBtn');
         const menuIcon = document.getElementById('menuIcon');
         const mobileDrawer = document.getElementById('mobileDrawer');
         const mobileBackdrop = document.getElementById('mobileBackdrop');
         const mobileLinks = document.querySelectorAll('.mobile-link');
         let isMenuOpen = false;
 
+        function openMenu() {
+            isMenuOpen = true;
+            mobileDrawer.classList.remove('translate-x-full');
+            mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('overflow-hidden');
+            menuIcon.classList.replace('fa-bars', 'fa-xmark');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMenu() {
+            isMenuOpen = false;
+            mobileDrawer.classList.add('translate-x-full');
+            mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('overflow-hidden');
+            menuIcon.classList.replace('fa-xmark', 'fa-bars');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+
         function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
             if (isMenuOpen) {
-                mobileDrawer.classList.remove('translate-x-full');
-                mobileBackdrop.classList.remove('opacity-0', 'pointer-events-none');
-                document.body.classList.add('overflow-hidden');
-                menuIcon.classList.replace('fa-bars', 'fa-xmark');
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                closeMenu();
             } else {
-                mobileDrawer.classList.add('translate-x-full');
-                mobileBackdrop.classList.add('opacity-0', 'pointer-events-none');
-                document.body.classList.remove('overflow-hidden');
-                menuIcon.classList.replace('fa-xmark', 'fa-bars');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                openMenu();
             }
         }
 
         mobileMenuBtn.addEventListener('click', toggleMenu);
-        mobileBackdrop.addEventListener('click', toggleMenu);
+        if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeMenu);
+        mobileBackdrop.addEventListener('click', closeMenu);
+
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (isMenuOpen) toggleMenu();
+                closeMenu();
             });
         });
 
         document.addEventListener('keydown', e => {
-            if (e.key === 'Escape' && isMenuOpen) toggleMenu();
+            if (e.key === 'Escape' && isMenuOpen) closeMenu();
         });
 
         // Typing Effect
